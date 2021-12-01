@@ -2,12 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import PoliceDashboard from './pages/police_dashboard';
+import PublicDashboard from "./pages/general_public";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="public" element={<PublicDashboard />} />
+          <Route path="police" element={<PoliceDashboard />} />
+      </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
